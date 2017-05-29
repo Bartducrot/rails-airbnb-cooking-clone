@@ -1,0 +1,12 @@
+<h1>HOME PAGE - ALL THE RECIPES</h1>
+
+<ul>
+  <li>Placeholder</li>
+  <% @recipes.each do |recipe|%>
+    <li> <%= recipe.name %></li>
+  <% end %>
+</ul>
+
+<% if user_signed_in? %>
+  <%= link_to "my profile", user_path(current_user) %>
+<% end %>

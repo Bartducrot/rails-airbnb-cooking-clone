@@ -1,0 +1,12 @@
+<h1>Create a new recipe</h1>
+<%= simple_form_for @precipe do |f| %>
+  <%= f.error_messages %>
+  <%= f.input :title, :hint => "give us a price" %>
+  <%= f.input :cooking_time, :hint => "prices should be in USD" %>
+  <%= f.input :description, :hint => "tell us where its from" %>
+  <%= f.input :difficulty %>
+  <%= f.input :cuisine_type %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "Home", recipes_path %>
