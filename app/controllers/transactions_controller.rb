@@ -1,15 +1,18 @@
 class TransactionsController < ApplicationController
+
+  before_action :set_transaction, except: [:new]
   def new
     @transaction = Transaction.new
   end
 
   def create
-    @transaction = Transaction.new(transaction_params)
+    @transaction = Transaction.new
     @transaction.user = current_user
+    @transaction.recipe = @recipe
     if @transaction.save
-      redirect_to self
+      redirect_to recipe_path(@recipe)
     else
-      render :new
+      render "recipes/show"
     end
   end
 
@@ -24,7 +27,7 @@ class TransactionsController < ApplicationController
   private
 
   def set_transaction
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:recipe_id])
   end
 
   def transaction_params
