@@ -1,0 +1,14 @@
+button.btn.btn-danger {
+  background-color: $brand-color;
+  &:hover{
+    background-color: $orange;
+    border-color: $orange;
+  }
+}
+
+a.btn-primary {
+  background-color: $light-blue;
+  &:hover{
+    background-color: $red;
+  }
+}

@@ -68,9 +68,15 @@
 
 <p>Please find me at views/recipes/show.html.erb</p>
 
+<h1><%= @recipe.title %> - <%= @recipe.transactions.count %></h1>
+
 <p><%= @recipe.description %></p>
 
 <%= link_to "delete this recipe", recipe_path(@recipe), method: :delete %>
 <%= link_to "home page", recipes_path %>
 
-
+<% if @recipe.user_id != current_user.id %>
+  <%= render 'transactions/form', recipe: @recipe, transaction: @transaction %>
+<% else %>
+  <%=  %>
+<% end %>
