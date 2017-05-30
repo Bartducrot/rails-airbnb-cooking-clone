@@ -6,7 +6,7 @@
 <%= link_to "delete this recipe", recipe_path(@recipe), method: :delete %>
 <%= link_to "home page", recipes_path %>
 
-<% if (@recipe.user_id != current_user.id) || Transaction.find_by_user_id(current_user.id).is_a? NilClass   %>
+<% if (@recipe.user_id != current_user.id) || (Transaction.find_by_user_id(current_user.id).is_a? NilClass)   %>
   <%= render 'transactions/form', recipe: @recipe, transaction: @transaction %>
 <% else %>
   <p> <%= @recipe.instructions %> </p>
