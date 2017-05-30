@@ -1,7 +1,6 @@
 <h1>HOME PAGE - ALL THE RECIPES</h1>
 
 <ul>
-  <li>Placeholder</li>
   <% @recipes.each do |recipe|%>
     <li> <%= recipe.title %> <%= link_to "show more", recipe_path(recipe) %></li>
   <% end %>
