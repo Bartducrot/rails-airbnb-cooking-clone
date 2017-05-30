@@ -1,0 +1,41 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <h1>HUBERT</h1>
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right">
+
+    <!-- Search form -->
+    <form action="" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="e.g. thai curry">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+
+    <!-- Text link -->
+
+    <!-- Profile picture and dropdown -->
+    <% if user_signed_in? %>
+      <%= link_to "My Cookbook", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <!-- Text link -->
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Create Recipe</a>
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li><%= link_to "Settings", edit_user_registration_path %></li>
+              <li><%= link_to "Log out", destroy_user_session_path, method: :delete%></li>
+          </ul>
+        </div>
+      </div>
+    <% else %>
+    <%= link_to "Sign in", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Sign up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
+  </div>
+</div>
