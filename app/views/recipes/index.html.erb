@@ -1,12 +1,14 @@
 <h1>HOME PAGE - ALL THE RECIPES</h1>
 
 <ul>
-  <li>Placeholder</li>
   <% @recipes.each do |recipe|%>
-    <li> <%= recipe.name %></li>
+    <li> <%= recipe.title %> <%= link_to "show more", recipe_path(recipe) %></li>
   <% end %>
 </ul>
 
 <% if user_signed_in? %>
   <%= link_to "my profile", user_path(current_user) %>
+  <%= link_to "sign out", destroy_user_session_path, method: :delete%>
+<% else %>
+  <%= link_to "sign in", new_user_registration_path %>
 <% end %>
