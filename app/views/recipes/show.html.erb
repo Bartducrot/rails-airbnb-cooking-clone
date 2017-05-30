@@ -7,7 +7,7 @@
 <%= link_to "home page", recipes_path %>
 
 <% if @recipe.user_id != current_user.id %>
-  <%= link_to "buy this recipe and add it to my cookbook",  %>
+  <%= render 'transaction/form', user_id: current_user.id, recipe_id: @recipe.id %>
 <% else %>
-
+  <%=  %>
 <% end %>
