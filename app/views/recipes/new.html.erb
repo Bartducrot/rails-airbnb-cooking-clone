@@ -1,11 +1,13 @@
 <h1>Create a new recipe</h1>
 <%= simple_form_for @recipe do |f| %>
   <%= f.error_notification %>
-  <%= f.input :title, :hint => "give us a price" %>
-  <%= f.input :cooking_time, :hint => "prices should be in USD" %>
-  <%= f.input :description, :hint => "tell us where its from" %>
-  <%= f.input :difficulty %>
-  <%= f.input :cuisine_type %>
+  <%= f.input :title, :hint => "Define the title" %>
+  <%= f.input :price, :hint => "give us a price (GBP)" %>
+  <%= f.input :cooking_time, :hint => "cooking time (minutes)" %>
+  <%= f.input :description, :hint => "tell us where its from, the story behind" %>
+  <%= f.input :instructions, :hint => "tell us how to do it step by step" %>
+  <%= f.input :difficulty, :hint => "tell us how difficlt it is"  %>
+  <%= f.input :cuisine_type, :hint => "french, italian, else"%>
   <%= f.button :submit %>
 <% end %>
 

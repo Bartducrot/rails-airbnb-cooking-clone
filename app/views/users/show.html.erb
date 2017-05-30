@@ -8,6 +8,7 @@
     <h3><%= recipe.title %></h3>
     <p><%= recipe.cuisine_type %></p>
     <p><%= recipe.description %></p>
+    <%= link_to "edit", recipe_path(recipe) %>
   </li>
   <% end %>
   <li>
