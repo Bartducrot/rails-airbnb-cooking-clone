@@ -14,13 +14,9 @@
 }
 .card-user {
   width: 60px;
-  border-radius: 50%;
   border: 3px solid white;
-  margin-top: 15px;
-  z-index: 3;
   position: relative;
-  margin: auto;
-  bottom: 0px;
+  // left: calc(50% - 30px);
 }
 .card-flexbox {
   display: flex;
