@@ -1,10 +1,10 @@
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,3)), url('css/images/superfood.jpg');">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,3)), url("<%= image_tag recipe.photo %>");">
         <div class="card-category"><i class="fa fa-clock-o" aria-hidden="true"></i>
- <%= @recipe.cooking_time %> MINS</div>
-        <div class="card-difficulty"><%= @recipe.difficulty.upcase %> <i class="fa fa-cutlery" aria-hidden="true"></i></div>
+        <%= recipe.cooking_time %> MINS</div>
+        <div class="card-difficulty"><%= recipe.difficulty.upcase %> <i class="fa fa-cutlery" aria-hidden="true"></i></div>
         <div class="card-flexbox">
-          <h2><%= @recipe.name %></h2>
-          <h3><%= @recipe.price %></h3>
+          <h2><%= recipe.title %></h2>
+          <h3>£<%= recipe.price %></h3>
           <div class="star-rating">
             <i class="fa fa-star" aria-hidden="true"></i>
             <i class="fa fa-star" aria-hidden="true"></i>
@@ -16,3 +16,5 @@
         <a class="card-link" href="#" ></a>
         <img class="card-user avatar" src="css/images/bart.jpeg">
       </div>
+
+
