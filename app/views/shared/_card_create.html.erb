@@ -18,7 +18,8 @@
           <i class="fa fa-star" aria-hidden="true"></i>
           <i class="fa fa-star" aria-hidden="true"></i>
         </div>
-         <% avatar_url = current_user.facebook_picture_url || current_user.photo.url(:square) || "http://placehold.it/30x30" %>
+        <% owner = User.find(recipe.user_id) %>
+         <% avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "http://placehold.it/30x30" %>
       <%= cl_image_tag avatar_url, class: "card-user avatar" %>
       </div>
       </div>
