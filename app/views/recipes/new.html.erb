@@ -2,6 +2,8 @@
 <%= simple_form_for @recipe do |f| %>
   <%= f.error_notification %>
   <%= f.input :title, :hint => "Define the title" %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.input :price, :hint => "give us a price (GBP)" %>
   <%= f.input :cooking_time, :hint => "cooking time (minutes)" %>
   <%= f.input :description, :hint => "tell us where its from, the story behind" %>
