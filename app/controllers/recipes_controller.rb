@@ -35,7 +35,7 @@ class RecipesController < ApplicationController
   def show
     @transactions = @recipe.transactions
     @transaction = Transaction.new
-    @status_current_user = had_buy(@transactions, current_user.id)
+    @status_current_user = had_buy(@transactions, current_user.id) if user_signed_in?
     @user = current_user
   end
 
