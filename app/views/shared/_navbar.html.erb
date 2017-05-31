@@ -6,12 +6,13 @@
   <div class="navbar-wagon-right">
 
     <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="e.g. thai curry">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
+
+
+    <%= form_tag(recipes_path, :method => "get", id: "search-form", class: "navbar-wagon-search") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+        <%= submit_tag "Search", :name => nil, class: "navbar-wagon-search-btn" %>
+    <% end %>
+
     <!-- Profile picture and dropdown -->
     <% if user_signed_in? %>
       <%= link_to "My Cookbook", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
