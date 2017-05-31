@@ -1,14 +1,9 @@
-<h1>HOME PAGE - ALL THE RECIPES</h1>
-
-<ul>
-  <% @recipes.each do |recipe|%>
-    <li> <%= recipe.title %> <%= link_to "show more", recipe_path(recipe) %></li>
-  <% end %>
-</ul>
-
-<% if user_signed_in? %>
-  <%= link_to "my profile", user_path(current_user) %>
-  <%= link_to "sign out", destroy_user_session_path, method: :delete%>
-<% else %>
-  <%= link_to "sign in", new_user_session_path %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @recipes.each do |recipe|%>
+      <div class="col-xs-12 col-sm-4">
+         <%= render "shared/card", recipe: recipe %>
+      </div>
+    <% end %>
+  </div>
+</div>
