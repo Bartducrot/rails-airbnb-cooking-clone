@@ -1,17 +1,7 @@
-/* Adjustments */
-.navbar-default {
-  background: white;
-}
-
-h1 {
-  text-align: center;
-  color: black;
-}
-
 /* Main class */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background:  $lighter-blue;
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
@@ -31,10 +21,19 @@ h1 {
 }
 
 /* Navbar logo */
+.navbar-wagon-brand {
+  color: $brand-color;
+  font-size: 36px;
+    &:hover {
+    color: $brand-color;
+    text-decoration: underline;
+    text-decoration-color: $blue;
+    }
+}
+
 .navbar-wagon-brand img {
   width: 50px;
 }
-
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
   display: flex;
@@ -51,33 +50,13 @@ h1 {
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: #616668;
   font-size: 16px;
+  color: $darker-grey;
+    &:hover {
   color: black;
+  text-decoration: none
+  }
 }
-.navbar-wagon-link:hover {
-  color: #da552f;
-  text-decoration: none;
-  color: $red;
-}
-
-/* Navbar right button */
-.navbar-wagon-button {
-  margin-left: 10px;
-  padding: 0 20px;
-  border-radius: 20em;
-  line-height: 40px;
-  background-color: #D23333;
-  color: white;
-  font-size: 14px;
-  border: 2px solid #D23333;
-}
-.navbar-wagon-button:hover {
-  color: white;
-  background: #D23333;
-  border-color: #ac2626;
-}
-
 /* Navbar search form */
 .navbar-wagon-search {
   flex: 0 1 300px;
@@ -88,7 +67,7 @@ h1 {
 }
 .navbar-wagon-search-btn {
   line-height: 40px;
-  color: #E6E6E6;
+  color: $dark-grey;
   border: none;
   background: transparent;
   position: absolute;
@@ -101,27 +80,27 @@ h1 {
   transition: all 0.15s ease;
   line-height: 40px;
   font-weight: lighter;
-  color: #666666;
-  border: 1px solid #E6E6E6;
+  color: $dark-grey;
+  border: 1px solid $lighter-blue;
   border-radius: 5px;
   padding: 0 10px;
   font-size: 14px;
   outline: none;
 }
 .navbar-wagon-search-input:focus  {
-  border: 1px solid #CCCCCC;
+  border: 1px solid $light-grey;
 }
 
 /* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+  box-shadow: 1px 1px 4px $lighter-blue;
+  border-color: $lighter-blue;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: $gray !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
@@ -139,6 +118,6 @@ h1 {
   top: -6px;
   background-color: white;
   transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
+  border-left: 1px solid $lighter-blue;
+  border-top: 1px solid $lighter-blue;
 }
