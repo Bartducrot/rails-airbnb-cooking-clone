@@ -13,48 +13,28 @@
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container-recipe-page">
 
   <div class="flex-recipe-details">
     <div class="recipe-description">
-      <h2>Description</h2>
-      <p><%= @recipe.description %></p>
+      <p>"<%= @recipe.description %>"</p>
     </div>
     <div class="cooking-details">
-      <h3><i class="fa fa-cutlery" aria-hidden="true"></i> EASY</h3>
-      <h3><i class="fa fa-clock-o" aria-hidden="true"></i> <%= @recipe.cooking_time %>mins </h3>
+      <h3><i class="fa fa-cutlery" aria-hidden="true"></i> <%= @recipe.difficulty.upcase%></h3>
+      <h3><i class="fa fa-clock-o" aria-hidden="true"></i> <%= @recipe.cooking_time %> MINS</h3>
     </div>
     <div class="recipe-avatar">
-      <img class="card-user avatar" src="css/images/bart.jpeg">
+      <img class="avatar" src="css/images/bart.jpeg">
     </div>
   </div>
 
-
-  <div class="instructions">
-    <h2>Ingredients</h2>
-    <ul>
-    <li>1 tbsp vegetable oil</li>
-    <li>1 onion</li>
-    <li>Onion, chopped</li>
-    <li>1 tsp fresh root ginger</li>
-    <li>1-2 tsp Thai red curry paste</li>
-    <li>400g can chopped tomatoes</li>
-    <li>50g sachet coconut cream</li>
-    <li>400g raw frozen prawns</li>
-    <li>Prawn</li>
-    <li>coriander, chopped, to serve (optional)</li>
-    </ul>
-  </div>
-
-  <div class="recipe-intructions">
+  <div class="recipe-instructions">
     <h2>Method</h2>
     <p><%= @recipe.instructions %></p>
   </div>
 
-
-
   <div class="recipe-reviews">
-    <h2>CUSTOMER REVIEWS</h2>
+    <h2>Customer Reviews</h2>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
@@ -64,18 +44,16 @@
     <h3>Bart</h3>
     <h4>July 2017</h4>
   </div>
+
+
 </div>
 
-<p>Please find me at views/recipes/show.html.erb</p>
-
 <h1><%= @recipe.title %> - <%= @recipe.transactions.count %></h1>
-
-<p><%= @recipe.description %></p>
 
 <%= link_to "delete this recipe", recipe_path(@recipe), method: :delete %>
 <%= link_to "home page", recipes_path %>
 
-<% if @recipe.user_id != current_user.id %>
+<% if user_signed_in? && @recipe.user_id != current_user.id %>
   <%= render 'transactions/form', recipe: @recipe, transaction: @transaction %>
 <% else %>
   <%=  %>
