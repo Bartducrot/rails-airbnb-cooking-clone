@@ -28,6 +28,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @transactions = @recipe.transactions
     @transaction = Transaction.new
     @user = current_user
   end
