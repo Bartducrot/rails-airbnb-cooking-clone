@@ -41,8 +41,24 @@
 
 
 <% if @recipe.user_id == current_user.id %>
+  <div class="recipe-instructions">
+    <h2>Method</h2>
+    <p><%= @recipe.instructions %></p>
+  </div>
+
+  <div class="recipe-reviews">
+    <h2>Customer Reviews</h2>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+    <p>"This was the best food I've ever tasted, and so simple to cook as well! Highly recommended"</p>
+    <h3>Bart</h3>
+    <h4>July 2017</h4>
+  </div>
   <%= link_to "delete this recipe", recipe_path(@recipe), method: :delete %>
-<% elsif @transactions.where(user_id: current_user.id)%>
+<% elsif @status_current_user%>
   <div class="recipe-instructions">
     <h2>Method</h2>
     <p><%= @recipe.instructions %></p>
@@ -60,5 +76,6 @@
     <h4>July 2017</h4>
   </div>
 <% else %>
+
   <%= render 'transactions/form', recipe: @recipe, transaction: @transaction %>
 <% end %>
