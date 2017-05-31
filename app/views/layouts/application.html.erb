@@ -14,9 +14,8 @@
 <body>
 
   <div class="wrapper">
+  <%= render 'shared/flashes' %>
   <%= render 'shared/navbar' %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
     <div class="container padded-bottom">
     <%= yield %>
     </div>
