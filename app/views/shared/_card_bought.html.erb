@@ -1,6 +1,7 @@
     <div class="row">
       <% @user.transactions.each do |transaction|  %>
       <% recipe = Recipe.find(transaction.recipe_id)%>
+        <%= link_to recipe_path(recipe) do%>
         <div class="col-xs-4">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,3)), url('<%= cl_image_path recipe.photo, height: 300, width: 400, crop: :fill %>');">
           <div class="card-category"><i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -26,6 +27,7 @@
           <%= cl_image_tag avatar_url, class: "card-user avatar" %>
           </div>
         </div>
+        <% end %>
       <% end  %>
       <div class="col-xs-4">
           <%= link_to recipes_path, class: "card add-card btn" do%>

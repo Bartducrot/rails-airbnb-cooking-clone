@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,3)), url('../assets/images/food.jpeg');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,3)), url('<%= cl_image_path @recipe.photo, height: 300, width: 400, crop: :fill %>'); background-size: cover">
   <div class="banner-content">
     <h1><%= @recipe.title %> <br> Bought by <%= @recipe.transactions.count %> people</h1>
     <i class="fa fa-heart-o" aria-hidden="true"></i>

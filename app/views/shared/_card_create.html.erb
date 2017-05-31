@@ -1,6 +1,7 @@
 <div class="row">
   <% user.recipes.each do |recipe| %>
     <div class="col-xs-4">
+      <%= link_to recipe_path(recipe) do%>
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,3)), url('<%= cl_image_path recipe.photo, height: 300, width: 400, crop: :fill %>');">
       <div class="card-category"><i class="fa fa-clock-o" aria-hidden="true"></i>
       <%= recipe.cooking_time %> MINS</div>
@@ -18,10 +19,10 @@
           <i class="fa fa-star" aria-hidden="true"></i>
         </div>
       </div>
-      <a class="card-link" href="#" ></a>
-      <% avatar_url = current_user.facebook_picture_url || current_user.photo.url(:square) || "http://placehold.it/30x30" %>
+         <% avatar_url = current_user.facebook_picture_url || current_user.photo.url(:square) || "http://placehold.it/30x30" %>
       <%= cl_image_tag avatar_url, class: "card-user avatar" %>
       </div>
+      <% end %>
     </div>
   <% end  %>
   <div class="col-xs-4">
