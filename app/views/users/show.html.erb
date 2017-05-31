@@ -23,7 +23,7 @@
 </div>
 <br>
 <div class="container my-recipes">
-  <h2>My Recipes</h2>
+  <h2><%= @user.first_name.capitalize %> Recipes</h2>
   <div class="content-container">
     <%= render "shared/card_create", user: @user %>
  </div>
