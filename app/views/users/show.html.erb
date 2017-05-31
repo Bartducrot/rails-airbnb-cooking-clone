@@ -1,17 +1,46 @@
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://placehold.it/500x1000');">
+  <div class="banner-content">
+    <%= link_to "Edit", edit_user_registration_path %>
+  </div>
+</div>
+
+<div class="container">
+  <% avatar_url = current_user.facebook_picture_url || current_user.photo.url(:square) || "http://placehold.it/30x30" %>
+  <%= cl_image_tag avatar_url, class: "avatar" %>
+  <h3><%= @user.first_name + " " + @user.last_name %></h3>
+</div>
+<br>
+<div class="container">
+  <h2>My Recipes</h2>
+  <%= link_to "ADD A NEW RECIPE", new_recipe_path %>
+  <div class="content-container">
+    <% @user.recipes.each do |recipe| %>
+      <div class="row">
+        <div class="col-xs-4">
+          <p><%= recipe.title %></p>
+        </div>
+      </div>
+    <% end  %>
+  </div>
+</div>
+<br>
+<div class="container">
+  <h2>Purchased Recipes</h2>
+  <%= link_to "BUY A NEW RECIPE", recipes_path %>
+    <div class="content-container">
+      <% @user.transactions.each do |transaction|  %>
+        <% recipe = Recipe.find(transaction.recipe_id)%>
+          <div class="row">
+            <div class="col-xs-4">
+              <p>recipe.title</p>
+            </div>
+          </div>
+      <% end  %>
+    </div>
+</div>
 
 
-<h2>TO DO: MAKE SOME CARDS</h2>
-<ul>
-  <% @user.recipes.each do |recipe| %>
-  <li>
-    <h3><%= recipe.title %></h3>
-    <p><%= recipe.cuisine_type %></p>
-    <p><%= recipe.description %></p>
-    <%= link_to "edit", recipe_path(recipe) %>
-  </li>
-  <% end %>
-  <li>
-    <%= link_to "ADD A NEW RECIPE", new_recipe_path %>
-  </li>
-</ul>
+
+
+
+

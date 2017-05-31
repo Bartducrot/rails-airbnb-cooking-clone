@@ -1,0 +1,83 @@
+.card {
+  width: 350px;
+  height: 250px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+}
+.fa-star {
+  color: #FFD203;
+}
+.fa-star:last-child {
+  color: grey;
+}
+.card-user {
+  width: 60px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-top: 15px;
+  z-index: 3;
+  position: relative;
+}
+.card-flexbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-category {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 5px;
+}
+.card-difficulty {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 5px;
+}
+.card-description h3 {
+  position: absolute;
+  bottom: 60px;
+  left: 200px;
+  font-family: Arial;
+}
+.card-description h2 {
+  font-size: 24px;
+  font-weight: bolder;
+  margin-bottom: 0px;
+  line-height: 20px;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover{
+  opacity: 0.1;
+}
+.card-flexbox h2 {
+  margin-top: 120px;
+  margin-bottom: 0px;
+}
+.card-flexbox h3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: Arial;
+  font-size: 30px;
+}
+
