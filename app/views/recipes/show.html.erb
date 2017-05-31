@@ -53,7 +53,7 @@
 <%= link_to "delete this recipe", recipe_path(@recipe), method: :delete %>
 <%= link_to "home page", recipes_path %>
 
-<% if user_signed_in? && @recipe.user_id != current_user.id %>
+<% if @recipe.user_id != current_user.id %>
   <%= render 'transactions/form', recipe: @recipe, transaction: @transaction %>
 <% else %>
   <%=  %>
