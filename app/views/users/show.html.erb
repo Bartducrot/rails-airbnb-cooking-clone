@@ -7,7 +7,7 @@
 <div class="container">
   <% avatar_url = current_user.facebook_picture_url || current_user.photo.url(:square) || "http://placehold.it/30x30" %>
   <%= cl_image_tag avatar_url, class: "avatar" %>
-  <h3><%= @user.first_name + " " + @user.last_name %></h3>
+  <h3><%= @user.fullname %></h3>
 </div>
 <br>
 <div class="container">
