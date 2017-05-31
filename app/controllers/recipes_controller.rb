@@ -28,7 +28,9 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @transactions = @recipe.transactions
     @transaction = Transaction.new
+    @status_current_user = had_buy(@transactions, current_user.id)
     @user = current_user
   end
 
@@ -36,6 +38,9 @@ class RecipesController < ApplicationController
     @recipe.destroy
     redirect_to recipes_path
   end
+
+
+
 
   private
 
@@ -48,6 +53,13 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:cooking_time, :difficulty, :price, :cuisine_type, :title, :description, :instructions,  :photo, :photo_cache)
   end
 
+  def had_buy(transactions, id)
+    lis = []
+    transactions.each do |transaction|
+      lis << transaction.user_id
+    end
+    return lis.include? current_user.id
+  end
 
 end
 

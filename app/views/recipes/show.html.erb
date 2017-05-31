@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,3)), url('../assets/images/food.jpeg');">
   <div class="banner-content">
-    <h1><%= @recipe.title %></h1>
+    <h1><%= @recipe.title %> <br> Bought by <%= @recipe.transactions.count %> people</h1>
     <i class="fa fa-heart-o" aria-hidden="true"></i>
     <i class="fa fa-chevron-left" aria-hidden="true"></i>
     <i class="fa fa-chevron-right" aria-hidden="true"></i>
@@ -24,11 +24,23 @@
       <h3><i class="fa fa-cutlery" aria-hidden="true"></i> <%= @recipe.difficulty.upcase%></h3>
       <h3><i class="fa fa-clock-o" aria-hidden="true"></i> <%= @recipe.cooking_time %> MINS</h3>
     </div>
-    <div class="recipe-avatar">
-      <img class="avatar" src="css/images/bart.jpeg">
-    </div>
+    <% owner = User.find(@recipe.user_id) %>
+    <%= link_to user_path(owner) do %>
+      <div class="recipe-avatar">
+
+        <% owner_avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "http://placehold.it/30x30" %>
+        <%= image_tag owner_avatar_url, class: "avatar"%>
+        <p class="text-center"><%= owner.first_name %> <br> <%= owner.last_name %></p>
+      </div>
+    <% end %>
   </div>
 
+
+
+</div>
+
+
+<% if @recipe.user_id == current_user.id %>
   <div class="recipe-instructions">
     <h2>Method</h2>
     <p><%= @recipe.instructions %></p>
@@ -45,17 +57,25 @@
     <h3>Bart</h3>
     <h4>July 2017</h4>
   </div>
+  <%= link_to "delete this recipe", recipe_path(@recipe), method: :delete %>
+<% elsif @status_current_user%>
+  <div class="recipe-instructions">
+    <h2>Method</h2>
+    <p><%= @recipe.instructions %></p>
+  </div>
 
-
-</div>
-
-<h1><%= @recipe.title %> - <%= @recipe.transactions.count %></h1>
-
-<%= link_to "delete this recipe", recipe_path(@recipe), method: :delete %>
-<%= link_to "home page", recipes_path %>
-
-<% if @recipe.user_id != current_user.id %>
-  <%= render 'transactions/form', recipe: @recipe, transaction: @transaction %>
+  <div class="recipe-reviews">
+    <h2>Customer Reviews</h2>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+    <p>"This was the best food I've ever tasted, and so simple to cook as well! Highly recommended"</p>
+    <h3>Bart</h3>
+    <h4>July 2017</h4>
+  </div>
 <% else %>
-  <%=  %>
+
+  <%= render 'transactions/form', recipe: @recipe, transaction: @transaction %>
 <% end %>
