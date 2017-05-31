@@ -1,8 +1,6 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <h1>HUBERT</h1>
-  </a>
+  <%= link_to "HUBERT", recipes_path, class: "navbar-wagon-brand" %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right">
@@ -14,15 +12,10 @@
         <i class="fa fa-search"></i>
       </button>
     </form>
-
-    <!-- Text link -->
-
     <!-- Profile picture and dropdown -->
     <% if user_signed_in? %>
       <%= link_to "My Cookbook", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
-
-      <!-- Text link -->
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Create Recipe</a>
+      <%= link_to "Create Recipe", new_recipe_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>

@@ -1,5 +1,4 @@
 // Your footer style
-// Your footer style
 .full {
     width: 100%;
 }
@@ -10,13 +9,13 @@
   display: block;
 }
 .footer {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: $lighter-blue;
   height: auto;
-  padding-bottom: 30px;
   position: relative;
   width: 100%;
-  border-bottom: 1px solid #CCCCCC;
-  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid $light-grey;
+  border-top: 1px solid $light-grey;
 }
 .footer p {
   margin: 0;
@@ -25,12 +24,12 @@
   max-width: 100%;
 }
 .footer h3 {
-  border-bottom: 1px solid #BAC1C8;
-  color: #54697E;
+  border-bottom: 1px solid $dark-grey;
+  color: $darker-grey;
   font-size: 18px;
   font-weight: 600;
   line-height: 27px;
-  padding: 40px 0 10px;
+  padding: 20px 0 10px;
   text-transform: uppercase;
 }
 .footer ul {
@@ -46,7 +45,9 @@
   display: block;
 }
 .footer a {
-  color: #78828D
+  color: $darker-grey;
+  text-decoration: none;
+
 }
 .supportLi h4 {
   font-size: 20px;
@@ -55,37 +56,13 @@
   margin-bottom: 0 !important;
   padding-bottom: 0;
 }
-.newsletter-box input#appendedInputButton {
-  background: #FFFFFF;
-  display: inline-block;
-  float: left;
-  height: 30px;
-  clear: both;
-  width: 100%;
-}
-.newsletter-box .btn {
-  border: medium none;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  display: inline-block;
-  height: 40px;
-  padding: 0;
-  width: 100%;
-  color: #fff;
-}
-.newsletter-box {
-  overflow: hidden;
-}
 .bg-gray {
   background-image: -moz-linear-gradient(center bottom, #BBBBBB 0%, #F0F0F0 100%);
   box-shadow: 0 1px 0 #B4B3B3;
 }
 .social li {
-  background: none repeat scroll 0 0 #B5B5B5;
-  border: 2px solid #B5B5B5;
+  background: none repeat scroll 0 0 white;
+  border: 2px solid $dark-grey;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
@@ -104,24 +81,17 @@
   -ms-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
 }
-.social li:hover {
-  transform: scale(1.15) rotate(360deg);
-  -webkit-transform: scale(1.1) rotate(360deg);
-  -moz-transform: scale(1.1) rotate(360deg);
-  -ms-transform: scale(1.1) rotate(360deg);
-  -o-transform: scale(1.1) rotate(360deg);
-}
 .social li a {
-  color: #EDEFF1;
+  color: $red;
 }
 .social li:hover {
-  border: 2px solid #2c3e50;
-  background: #2c3e50;
+  border: 2px solid $brand-color;
+  background: white;
 }
 .social li a i {
   font-size: 16px;
   margin: 0 0 0 5px;
-  color: #EDEFF1 !important;
+  color: $brand-color !important;
 }
 .footer-bottom {
   background: #E3E3E3;
