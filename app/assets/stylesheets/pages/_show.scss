@@ -11,6 +11,7 @@
   position: absolute;
   bottom: 20px;
   left: 20px;
+  color: white;
 }
 .fa-heart-o {
   font-size: 40px;
@@ -59,19 +60,11 @@
   right: 70px;
 }
 
-.card-user {
+.recipe-avatar .avatar {
   width: 100px;
   border-radius: 50%;
   border: 5px solid white;
   background-color: grey;
-}
-
-.instructions {
-  margin-top: 50px;
-  float: left;
-  border: 0.5px solid black;
-  position: sticky;
-  padding: 20px;
 }
 
 .flex-recipe-details {
@@ -83,6 +76,26 @@
 
 .cooking-details {
   font-size: 40px;
+}
+
+.container-recipe-page {
+  width: 70%;
+  margin: auto;
+}
+
+.recipe-description {
+  padding-top: 30px;
+}
+
+.recipe-instructions {
+  border-bottom: 0.5px solid grey;
+  padding: 20px;
+  text-align: center;
+}
+
+.recipe-reviews {
+  padding: 20px;
+  text-align: center;
 }
 
 
