@@ -8,23 +8,12 @@
   </div>
 </div>
 
-<ul>
-  <% @recipes.each do |recipe|%>
-    <li> <%= recipe.title %> </li>
-    <li> <%= recipe.cooking_time %> </li>
-    <li> <%= recipe.difficulty %> </li>
-    <li> <%= recipe.description %> </li>
-    <li> <%= recipe.photo %> Photo </li>
-    <li> <%= link_to "show more", recipe_path(recipe) %> </li>
-    <li><%=  %></li>
-  <% end %>
-</ul>
-
 <% if user_signed_in? %>
   <%= link_to "my profile", user_path(current_user) %>
   <%= link_to "sign out", destroy_user_session_path, method: :delete%>
 <% else %>
   <%= link_to "sign in", new_user_session_path %>
+<% end %>
 
 <% if @recipes.blank? %>
   <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
