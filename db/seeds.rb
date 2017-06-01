@@ -17,16 +17,11 @@ User.destroy_all
 Recipe.destroy_all
 
 admin = User.create(first_name: "administration", email: "hubert@gmail.com", password: "123456")
-
-2.times do |i|
-    url = "https://www.bbcgoodfood.com/search/recipes?query=&op=Search#page=#{i}"
-    html = Nokogiri::HTML(open(url))
-
-    ingredients = ["french", "italian", "sushi"]
+1.times do |i|
+    ingredients = ["sushi", "french", "italian"]
     base_url = "https://www.bbcgoodfood.com"
     ingredients.each do |ingredient|
       url = "https://www.bbcgoodfood.com/search/recipes?query=#{ingredient}#query=#{ingredient}&page=#{i}"
-      url = "https://www.bbcgoodfood.com/search/recipes?query=#{ingredient}"
       html = Nokogiri::HTML(open(url))
 
       html.search('.node-recipe').each do |node|
