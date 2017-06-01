@@ -25,15 +25,38 @@
 <div class="container my-recipes">
   <h2><%= @user.first_name.capitalize %> Recipes</h2>
   <div class="content-container">
-    <%= render "shared/card_create", user: @user %>
- </div>
+    <div class="row">
+      <% @user.recipes.each do |recipe| %>
+        <div class="col-xs-12 col-sm-6">
+          <%= render "shared/card", recipe: recipe %>
+        </div>
+      <% end  %>
+      <div class="col-xs-12 col-sm-6">
+        <%= link_to new_recipe_path, class: "card add-card btn" do%>
+          <h3>Add a new recipe</h3>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 <br>
-<div class="container bought-recipe">
+<div class="container my-recipes">
   <h2>Purchased Recipes</h2>
-  <%= link_to "BUY A NEW RECIPE", recipes_path %>
     <div class="content-container">
-      <%= render "shared/card_bought" %>
+      <div class="row">
+      <% @user.transactions.each do |transaction|  %>
+        <% recipe = Recipe.find(transaction.recipe_id)%>
+          <div class="col-xs-12 col-sm-6">
+            <%= render "shared/card", recipe: recipe %>
+          </div>
+        <% end %>
+
+        <div class="col-xs-12 col-sm-6">
+          <%= link_to recipes_path, class: "card add-card btn" do%>
+            <h3>Buy a recipe</h3>
+          <% end %>
+        </div>
+      </div>
     </div>
 </div>
 
