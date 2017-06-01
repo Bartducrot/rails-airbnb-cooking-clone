@@ -8,13 +8,14 @@
 Transaction.destroy_all
 User.destroy_all
 Recipe.destroy_all
-admin = User.create(email: "bob@gmail.com", password: "123123")
 
-5.times do |i|
+admin = User.create(first_name: "administration", email: "hubert@gmail.com", password: "123456")
+
+1.times do |i|
     url = "https://www.bbcgoodfood.com/search/recipes?query=&op=Search#page=#{i}"
     html = Nokogiri::HTML(open(url))
 
-    ingredients = ["italian"]
+    ingredients = ["french"]
     base_url = "https://www.bbcgoodfood.com"
     ingredients.each do |ingredient|
       url = "https://www.bbcgoodfood.com/search/recipes?query=#{ingredient}#query=#{ingredient}&page=#{i}"
