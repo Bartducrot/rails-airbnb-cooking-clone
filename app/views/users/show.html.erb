@@ -17,7 +17,11 @@
 <div class="container user-profile text-center">
   <div id="avatar_position" >
     <% avatar_url = @user.facebook_picture_url || @user.photo.url(:square) || "http://placehold.it/30x30" %>
-    <%= cl_image_tag avatar_url, class: "avatar-large  text-center" %>
+    <% if @user.first_name == "administration" %>
+      <%= cl_image_tag "lmaagvitvvpz5unlrjfm", class: "avatar-large  text-center" %>
+    <% else %>
+      <%= cl_image_tag avatar_url, class: "avatar-large  text-center" %>
+    <% end %>
   </div>
   <h3><%= @user.first_name + " " + @user.last_name %></h3>
 </div>
