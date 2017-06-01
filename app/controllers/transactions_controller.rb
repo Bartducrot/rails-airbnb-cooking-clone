@@ -20,7 +20,7 @@ class TransactionsController < ApplicationController
   end
 
   def update
-    @recipe.update(transaction_params)
+    @recipe.update(recipe_params)
     redirect_to recipe_path(@recipe)
   end
 
