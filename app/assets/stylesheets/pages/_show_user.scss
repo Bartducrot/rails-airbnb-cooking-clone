@@ -1,0 +1,43 @@
+.banner {
+  height: 40vh;
+  z-index: -1;
+}
+
+.user-profile {
+  border-bottom: 1px solid grey;
+}
+#avatar_position {
+  margin-top: -20px;
+  z-index: 3 !important;
+}
+
+.my-recipes {
+  padding: 30px;
+  border-bottom: 1px solid grey;
+}
+
+.bought-recipe {
+  padding: 30px;
+}
+
+.add-card {
+  border: 1px solid grey;
+  font-size: 40px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+#user-banner {
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+.add-card :hover {
+  color: $light-grey
+
+}
+

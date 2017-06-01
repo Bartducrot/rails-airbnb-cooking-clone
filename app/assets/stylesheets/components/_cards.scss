@@ -1,10 +1,10 @@
 .card {
-  width: 350px;
   height: 250px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
   position: relative;
+  margin: 20px;
 }
 .fa-star {
   color: #FFD203;
@@ -14,11 +14,9 @@
 }
 .card-user {
   width: 60px;
-  border-radius: 50%;
   border: 3px solid white;
-  margin-top: 15px;
-  z-index: 3;
   position: relative;
+  // left: calc(50% - 30px);
 }
 .card-flexbox {
   display: flex;
@@ -35,6 +33,7 @@
   padding: 5px;
   border-radius: 5px;
 }
+
 .card-difficulty {
   position: absolute;
   bottom: 10px;
@@ -44,6 +43,10 @@
   font-weight: bolder;
   padding: 5px;
   border-radius: 5px;
+}
+
+.star-rating {
+  font-size: 20px;
 }
 .card-description h3 {
   position: absolute;

@@ -1,4 +1,12 @@
-<h1>HOME PAGE - ALL THE RECIPES</h1>
+<div class="container">
+  <div class="row">
+    <% @recipes.each do |recipe|%>
+      <div class="col-xs-12 col-sm-6">
+         <%= render "shared/card", recipe: recipe %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <ul>
   <% @recipes.each do |recipe|%>
@@ -17,4 +25,7 @@
   <%= link_to "sign out", destroy_user_session_path, method: :delete%>
 <% else %>
   <%= link_to "sign in", new_user_session_path %>
+
+<% if @recipes.blank? %>
+  <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
 <% end %>

@@ -1,41 +1,39 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://placehold.it/500x1000');">
+
+<% if recipe = @user.recipes.last%>
+<div class="banner" id="user-banner" style="background-image: url('<%= cl_image_path recipe.photo, height: 300, width: 400, crop: :fill %>');">
   <div class="banner-content">
     <%= link_to "Edit", edit_user_registration_path %>
   </div>
 </div>
-
-<div class="container">
-  <% avatar_url = current_user.facebook_picture_url || current_user.photo.url(:square) || "http://placehold.it/30x30" %>
-  <%= cl_image_tag avatar_url, class: "avatar" %>
-  <h3><%= @user.fullname %></h3>
-</div>
-<br>
-<div class="container">
-  <h2>My Recipes</h2>
-  <%= link_to "ADD A NEW RECIPE", new_recipe_path %>
-  <div class="content-container">
-    <% @user.recipes.each do |recipe| %>
-      <div class="row">
-        <div class="col-xs-4">
-          <p><%= recipe.title %></p>
-        </div>
-      </div>
-    <% end  %>
+<% else %>
+<div class="banner" id="user-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pexels.com/photos/77586/night-77586.jpeg');">
+  <div class="banner-content">
+    <%= link_to "Edit", edit_user_registration_path %>
   </div>
 </div>
+<% end %>
+
+
+<div class="container user-profile text-center">
+  <div id="avatar_position" >
+    <% avatar_url = @user.facebook_picture_url || @user.photo.url(:square) || "http://placehold.it/30x30" %>
+    <%= cl_image_tag avatar_url, class: "avatar-large  text-center" %>
+  </div>
+  <h3><%= @user.first_name + " " + @user.last_name %></h3>
+</div>
 <br>
-<div class="container">
+<div class="container my-recipes">
+  <h2><%= @user.first_name.capitalize %> Recipes</h2>
+  <div class="content-container">
+    <%= render "shared/card_create", user: @user %>
+ </div>
+</div>
+<br>
+<div class="container bought-recipe">
   <h2>Purchased Recipes</h2>
   <%= link_to "BUY A NEW RECIPE", recipes_path %>
     <div class="content-container">
-      <% @user.transactions.each do |transaction|  %>
-        <% recipe = Recipe.find(transaction.recipe_id)%>
-          <div class="row">
-            <div class="col-xs-4">
-              <p>recipe.title</p>
-            </div>
-          </div>
-      <% end  %>
+      <%= render "shared/card_bought" %>
     </div>
 </div>
 
