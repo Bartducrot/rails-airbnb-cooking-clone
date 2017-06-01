@@ -18,8 +18,8 @@
 
     <!-- Profile picture and dropdown -->
     <% if user_signed_in? %>
-      <%= link_to "My Cookbook", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Create Recipe", new_recipe_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "MY COOKBOOK", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "CREATE RECIPE", new_recipe_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
