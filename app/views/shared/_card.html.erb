@@ -11,8 +11,12 @@
     <% end %>
   </div>
   <% owner = User.find(recipe.user_id) %>
-  <% avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "http://placehold.it/30x30" %>
-  <%= cl_image_tag avatar_url, class: "card-user avatar-bordered" %>
+  <% avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "lmaagvitvvpz5unlrjfm" %>
+  <% if owner.first_name == "administration" %>
+    <%= cl_image_tag "lmaagvitvvpz5unlrjfm", class: "card-user avatar-bordered" %>
+  <% else %>
+    <%= cl_image_tag avatar_url, class: "card-user avatar-bordered" %>
+  <% end %>
   <%= link_to "", recipe_path(recipe), class: "card-link"  %>
 </div>
 
