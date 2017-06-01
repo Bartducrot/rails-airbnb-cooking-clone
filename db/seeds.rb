@@ -5,6 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+def transform_time(t)
+  match_data = t.match(/((?<h>\d{0,2}) hours? and (?<m>\d{1,2}) mins)|((?<j>\d{0,2}) hours?)|((?<n>\d{1,2}) mins)/)
+  match_data[:h].to_i * 60 + match_data[:m].to_i + match_data[:j].to_i * 60 + match_data[:n].to_i
+end
+
+
 Transaction.destroy_all
 User.destroy_all
 Recipe.destroy_all
@@ -25,6 +32,8 @@ admin = User.create(first_name: "administration", email: "hubert@gmail.com", pas
       html.search('.node-recipe').each do |node|
         title = node.search('h3 a').text.strip
         cooking_time = node.search('.teaser-item__info-item--total-time').text.strip
+        cooking_time = transform_time(cooking_time)
+
         difficulty = node.search('.teaser-item__info-item--skill-level').text.strip
         description = node.search('.field-items > .field-item').text.strip
 
