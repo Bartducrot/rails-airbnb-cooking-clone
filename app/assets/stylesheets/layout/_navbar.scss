@@ -1,15 +1,31 @@
 /* Main class */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background:  $lighter-blue;
+  background:  white;
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
   padding: 0px 30px;
   align-items: center;
-  justify-content: space-between;
 }
 
+.search-box-icon {
+  height: 100%;
+  background-color: #f3f3f3;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 20px;
+  margin-right: 0px;
+  color: #4e4e4e;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.fa-search {
+  color: #4e4e4e;
+  font-size: 20px;
+}
 
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
@@ -38,7 +54,7 @@
 .navbar-wagon-right {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 /* Navbar item */
@@ -59,12 +75,26 @@
 }
 /* Navbar search form */
 .navbar-wagon-search {
-  flex: 0 1 300px;
   display: flex;
-  justify-content: flex-end;
-  padding: 0 10px;
+  flex: 1 0 auto;
+  padding: 0;
   position: relative;
+  height: 100%;
+  font-family: Raleway,Roboto,Helvetica Neue,Segoe UI,sans-serif;
+  font-weight: 400;
+  border: none;
 }
+
+#search {
+  border-radius: 0px;
+  background-color: #f3f3f3;
+  padding-right: 200px;
+  padding-left: 5px;
+  margin-left: 0px;
+  border: none;
+}
+
+
 .navbar-wagon-search-btn {
   line-height: 40px;
   color: $dark-grey;
@@ -86,9 +116,6 @@
   padding: 0 10px;
   font-size: 14px;
   outline: none;
-}
-.navbar-wagon-search-input:focus  {
-  border: 1px solid $light-grey;
 }
 
 /* Navbar dropdown menu */

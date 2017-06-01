@@ -2,16 +2,17 @@
   <!-- Logo -->
   <%= link_to "HUBERT", recipes_path, class: "navbar-wagon-brand" %>
 
+   <!-- Search form -->
+  <div class="search-box-icon">
+  <i class="fa fa-search" aria-hidden="true"></i>
+  </div>
+   <%= form_tag(recipes_path, :method => "get", id: "search-form", class: "navbar-wagon-search") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search millions of recipes" %>
+    <% end %>
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right">
 
-    <!-- Search form -->
-
-
-    <%= form_tag(recipes_path, :method => "get", id: "search-form", class: "navbar-wagon-search") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-        <%= submit_tag "Search", :name => nil, class: "navbar-wagon-search-btn" %>
-    <% end %>
 
     <!-- Profile picture and dropdown -->
     <% if user_signed_in? %>
