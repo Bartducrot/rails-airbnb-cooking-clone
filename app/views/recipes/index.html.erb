@@ -2,7 +2,13 @@
 
 <ul>
   <% @recipes.each do |recipe|%>
-    <li> <%= recipe.title %> <%= link_to "show more", recipe_path(recipe) %></li>
+    <li> <%= recipe.title %> </li>
+    <li> <%= recipe.cooking_time %> </li>
+    <li> <%= recipe.difficulty %> </li>
+    <li> <%= recipe.description %> </li>
+    <li> <%= recipe.photo %> Photo </li>
+    <li> <%= link_to "show more", recipe_path(recipe) %> </li>
+    <li><%=  %></li>
   <% end %>
 </ul>
 
