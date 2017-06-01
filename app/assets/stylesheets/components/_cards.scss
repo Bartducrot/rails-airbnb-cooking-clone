@@ -1,65 +1,37 @@
+.recipe-container {
+  width: 100%;
+}
 .card {
-  height: 250px;
+  height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
   position: relative;
-  margin: 20px;
-}
-.fa-star {
-  color: #FFD203;
-}
-.fa-star:last-child {
-  color: grey;
+  margin: 0;
 }
 .card-user {
-  width: 60px;
-  border: 3px solid white;
-  position: relative;
-  // left: calc(50% - 30px);
-}
-.card-flexbox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 .card-category {
   position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
   bottom: 10px;
   left: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: bolder;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.card-difficulty {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: bolder;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.star-rating {
-  font-size: 20px;
-}
-.card-description h3 {
-  position: absolute;
-  bottom: 60px;
-  left: 200px;
-  font-family: Arial;
 }
 .card-description h2 {
   font-size: 24px;
-  font-weight: bolder;
-  margin-bottom: 0px;
-  line-height: 20px;
 }
+.card-description p {
+  font-size: 13px;
+  }
 .card-link {
   position: absolute;
   top: 0;
@@ -73,14 +45,3 @@
 .card-link:hover{
   opacity: 0.1;
 }
-.card-flexbox h2 {
-  margin-top: 120px;
-  margin-bottom: 0px;
-}
-.card-flexbox h3 {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-family: Arial;
-  font-size: 30px;
-}
-
