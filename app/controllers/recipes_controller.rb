@@ -34,6 +34,7 @@ class RecipesController < ApplicationController
 
   def show
     @transactions = @recipe.transactions
+
     sum = 0
     nb = 0
     @transactions.each do |transaction|
@@ -42,7 +43,13 @@ class RecipesController < ApplicationController
         nb += 1
       end
     end
-    @average_rating = (sum / nb).to_i
+
+    if nb != 0
+      @average_rating = (sum / nb).to_i
+    else
+      @average_rating = 0
+    end
+
     @transaction = Transaction.find_by(user: current_user, recipe: @recipe)
     unless @transaction
       @transaction = Transaction.new
