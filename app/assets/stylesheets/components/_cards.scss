@@ -1,65 +1,81 @@
+.recipe-cards {
+  padding-right: 0px;
+  padding-left: 0px;
+
+}
+.recipe-index-container {
+  margin-top: 30px;
+  h1 {
+    color: black;
+    padding-top: 0px;
+    font-weight: 500;
+    font-size: 80px;
+  }
+}
 .card {
   height: 250px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
   position: relative;
-  margin: 20px;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  margin: 3px;
+  text-shadow: 1px 1px 2px black;
+  box-shadow: 1px 1px 2px rgb(150, 150, 150);
 }
-.fa-star {
-  color: #FFD203;
-}
-.fa-star:last-child {
-  color: grey;
+
+.card:hover {
+  box-shadow: none;
+  top: 1px;
 }
 .card-user {
-  width: 60px;
-  border: 3px solid white;
-  position: relative;
-  // left: calc(50% - 30px);
-}
-.card-flexbox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.card-category {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: bolder;
-  padding: 5px;
-  border-radius: 5px;
+  right: 15px;
+  bottom: 15px;
 }
-
 .card-difficulty {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  top: 10px;
+  left: 10px;
   font-size: 15px;
+  font-weight: 500;
   text-transform: uppercase;
-  font-weight: bolder;
-  padding: 5px;
-  border-radius: 5px;
+}
+.card-time {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
-.star-rating {
-  font-size: 20px;
-}
-.card-description h3 {
+.card-rating {
   position: absolute;
-  bottom: 60px;
-  left: 200px;
-  font-family: Arial;
+  bottom: 17px;
+  left: 125px;
+  font-size: 25px;
+  font-weight: 300;
+  color: $yellow;
+
 }
-.card-description h2 {
-  font-size: 24px;
-  font-weight: bolder;
-  margin-bottom: 0px;
-  line-height: 20px;
+.card-description {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+
+  h3 {
+    font-size: 25px;
+    font-weight: 500;
+  }
+  h4 {
+    font-size: 20px;
+    font-weight: 300;
+  }
 }
+
 .card-link {
   position: absolute;
   top: 0;
@@ -71,16 +87,5 @@
   opacity: 0;
 }
 .card-link:hover{
-  opacity: 0.1;
+  opacity: 0.3;
 }
-.card-flexbox h2 {
-  margin-top: 120px;
-  margin-bottom: 0px;
-}
-.card-flexbox h3 {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-family: Arial;
-  font-size: 30px;
-}
-
