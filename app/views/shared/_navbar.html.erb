@@ -4,12 +4,14 @@
 
    <!-- Search form -->
   <div class="search-box-icon">
-  <i class="fa fa-search" aria-hidden="true"></i>
-  </div>
-   <%= form_tag(recipes_path, :method => "get", id: "search-form", class: "navbar-wagon-search") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search millions of recipes" %>
-    <% end %>
+    <div class="search-form">
+      <i class="fa fa-search" aria-hidden="true"></i>
 
+     <%= form_tag(recipes_path, :method => "get", id: "search-form", class: "navbar-wagon-search") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search millions of recipes" %>
+      <% end %>
+     </div>
+  </div>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right">
 

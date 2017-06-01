@@ -11,7 +11,6 @@
 
 .search-box-icon {
   height: 100%;
-  background-color: #f3f3f3;
   padding-left: 10px;
   padding-right: 10px;
   margin-left: 20px;
@@ -20,6 +19,7 @@
   font-size: 20px;
   display: flex;
   align-items: center;
+  flex-grow: 1;
 }
 
 .fa-search {
@@ -38,12 +38,13 @@
 
 /* Navbar logo */
 .navbar-wagon-brand {
-  color: $brand-color;
+  color: $darker-grey;
   font-size: 36px;
+  font-weight: bolder;
     &:hover {
-    color: $brand-color;
-    text-decoration: underline;
-    text-decoration-color: $blue;
+    color: $black;
+    text-decoration: none;
+    text-decoration-color: $black;
     }
 }
 
@@ -85,13 +86,22 @@
   border: none;
 }
 
+.search-form {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  height: 100%;
+}
+
 #search {
   border-radius: 0px;
-  background-color: #f3f3f3;
-  padding-right: 200px;
+  padding-right: 5px;
   padding-left: 5px;
   margin-left: 0px;
   border: none;
+  width: 100%;
+  background-color: transparent;
 }
 
 
@@ -105,18 +115,7 @@
   top: -2px;
   z-index: 1;
 }
-.navbar-wagon-search-input {
-  flex: 0 1 300px;
-  transition: all 0.15s ease;
-  line-height: 40px;
-  font-weight: lighter;
-  color: $dark-grey;
-  border: 1px solid $lighter-blue;
-  border-radius: 5px;
-  padding: 0 10px;
-  font-size: 14px;
-  outline: none;
-}
+
 
 /* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
