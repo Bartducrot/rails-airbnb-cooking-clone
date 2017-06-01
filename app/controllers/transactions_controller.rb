@@ -20,7 +20,8 @@ class TransactionsController < ApplicationController
   end
 
   def update
-    @recipe.update(recipe_params)
+    @transaction = Transaction.find(params[:id])
+    @transaction.update(transaction_params)
     redirect_to recipe_path(@recipe)
   end
 
