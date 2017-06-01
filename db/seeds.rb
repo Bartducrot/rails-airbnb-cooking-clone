@@ -14,7 +14,7 @@ admin = User.create(email: "bob@gmail.com", password: "123123")
     url = "https://www.bbcgoodfood.com/search/recipes?query=&op=Search#page=#{i}"
     html = Nokogiri::HTML(open(url))
 
-    ingredients = [""]
+    ingredients = ["italian"]
     base_url = "https://www.bbcgoodfood.com"
     ingredients.each do |ingredient|
       url = "https://www.bbcgoodfood.com/search/recipes?query=#{ingredient}#query=#{ingredient}&page=#{i}"
