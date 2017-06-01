@@ -1,13 +1,20 @@
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path recipe.photo, height: 300, width: 400, crop: :fill %>');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2><%= recipe.title %></h2>
-          <h3><%= recipe.price %> £</h3>
-        </div>
-        <% owner = User.find(recipe.user_id) %>
-        <% avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "http://placehold.it/30x30" %>
-        <%= cl_image_tag avatar_url, class: "card-user avatar" %>
-      </div>
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,3)), url('<%= cl_image_path recipe.photo, height: 300, width: 400, crop: :fill %>');">
+  <div class="card-difficulty"><i class="fa fa-cutlery" aria-hidden="true"></i> <%= recipe.difficulty.upcase %></div>
+  <div class="card-time"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= recipe.cooking_time %> MINS</div>
+  <div class="card-description">
+    <h3><%= recipe.title %></h3>
+    <h4>£ <%= recipe.price %></h4>
+  </div>
+  <div class="card-rating">
+    <% 5.times do %>
+      <i class="fa fa-star" aria-hidden="true"></i>
+    <% end %>
+  </div>
+  <% owner = User.find(recipe.user_id) %>
+  <% avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "http://placehold.it/30x30" %>
+  <%= cl_image_tag avatar_url, class: "card-user avatar-bordered" %>
+  <%= link_to "", recipe_path(recipe), class: "card-link"  %>
+</div>
 
 
 

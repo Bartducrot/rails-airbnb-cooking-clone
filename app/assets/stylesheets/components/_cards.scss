@@ -1,37 +1,81 @@
-.recipe-container {
-  width: 100%;
+.recipe-cards {
+  padding-right: 0px;
+  padding-left: 0px;
+
+}
+.recipe-index-container {
+  margin-top: 30px;
+  h1 {
+    color: black;
+    padding-top: 0px;
+    font-weight: 500;
+    font-size: 80px;
+  }
 }
 .card {
-  height: 175px;
+  height: 250px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
   position: relative;
   margin: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  margin: 3px;
+  text-shadow: 1px 1px 2px black;
+  box-shadow: 1px 1px 2px rgb(150, 150, 150);
+}
+
+.card:hover {
+  box-shadow: none;
+  top: 1px;
 }
 .card-user {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
+  right: 15px;
+  bottom: 15px;
 }
-.card-category {
+.card-difficulty {
   position: absolute;
   top: 10px;
   left: 10px;
-  font-size: 10px;
+  font-size: 15px;
+  font-weight: 500;
   text-transform: uppercase;
+}
+.card-time {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.card-rating {
+  position: absolute;
+  bottom: 17px;
+  left: 125px;
+  font-size: 25px;
+  font-weight: 300;
+  color: $yellow;
+
 }
 .card-description {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-.card-description h2 {
-  font-size: 24px;
-}
-.card-description p {
-  font-size: 13px;
+  bottom: 8px;
+  left: 8px;
+
+  h3 {
+    font-size: 25px;
+    font-weight: 500;
   }
+  h4 {
+    font-size: 20px;
+    font-weight: 300;
+  }
+}
+
 .card-link {
   position: absolute;
   top: 0;
@@ -43,5 +87,5 @@
   opacity: 0;
 }
 .card-link:hover{
-  opacity: 0.1;
+  opacity: 0.3;
 }
