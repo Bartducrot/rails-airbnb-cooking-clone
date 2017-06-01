@@ -40,22 +40,11 @@
   </div>
 
   <% if user_signed_in? %>
+
     <% if @recipe.user_id == current_user.id %>
       <div class="recipe-instructions">
         <h2>Method</h2>
         <p><%= @recipe.instructions %></p>
-      </div>
-
-      <div class="recipe-reviews">
-        <h2>Customer Reviews</h2>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-        <p>"This was the best food I've ever tasted, and so simple to cook as well! Highly recommended"</p>
-        <h3>Bart</h3>
-        <h4>July 2017</h4>
       </div>
       <%= link_to "delete this recipe", recipe_path(@recipe), method: :delete %>
     <% elsif @status_current_user%>
@@ -63,21 +52,52 @@
         <h2>Method</h2>
         <p><%= @recipe.instructions %></p>
       </div>
+      <div class="review-btn text-center padded">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#form">
+          Leave a review
+        </button>
 
-      <div class="recipe-reviews">
-        <h2>Customer Reviews</h2>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-        <p>"This was the best food I've ever tasted, and so simple to cook as well! Highly recommended"</p>
-        <h3>Bart</h3>
-        <h4>July 2017</h4>
+        <!-- Modal -->
+        <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="formLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="formLabel">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                <%= render 'transactions/edit_form', recipe: @recipe, transaction: @transaction %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     <% else %>
-
       <%= render 'transactions/form', recipe: @recipe, transaction: @transaction %>
     <% end %>
+
   <% end %>
+  <div class="recipe-reviews">
+    <h2>Customer Reviews</h2>
+
+      <% @transactions.each do |transaction| %>
+        <div class="review">
+          <% if transaction.rating %>
+            <% transaction.rating.times do %>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            <% end %>
+            <p>"<%= transaction.comment %>"</p>
+            <h3><%= transaction.user.first_name %></h3>
+          <% end %>
+        </div>
+      <% end %>
+
+  </div>
+
 </div>
+
+

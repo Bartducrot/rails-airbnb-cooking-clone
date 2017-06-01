@@ -54,12 +54,11 @@
 
 .card-rating {
   position: absolute;
-  bottom: 17px;
-  left: 125px;
+  bottom: 15px;
+  left: 35%;
   font-size: 25px;
   font-weight: 300;
   color: $yellow;
-
 }
 .card-description {
   position: absolute;
@@ -68,7 +67,7 @@
 
   h3 {
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 300;
   }
   h4 {
     font-size: 20px;

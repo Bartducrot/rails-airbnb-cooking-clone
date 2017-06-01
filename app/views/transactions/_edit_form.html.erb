@@ -1,0 +1,5 @@
+<%= simple_form_for([ recipe, transaction ]) do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :rating %>
+  <%= f.button :submit, value: "Leave a review"%>
+<% end %>
