@@ -5,11 +5,6 @@
     <i class="fa fa-heart-o" aria-hidden="true"></i>
     <i class="fa fa-chevron-left" aria-hidden="true"></i>
     <i class="fa fa-chevron-right" aria-hidden="true"></i>
-    <div class="star-rating">
-    <% @average_rating.times do %>
-      <i class="fa fa-star" aria-hidden="true"></i>
-    <% end %>
-    </div>
   </div>
 </div>
 <div class="container padded-bottom">
@@ -22,6 +17,13 @@
       <div class="cooking-details">
         <h3><i class="fa fa-cutlery" aria-hidden="true"></i> <%= @recipe.difficulty.upcase%></h3>
         <h3><i class="fa fa-clock-o" aria-hidden="true"></i> <%= @recipe.cooking_time %> MINS</h3>
+        <div class="star-rating">
+          <h4>
+            <% @average_rating.times do %>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            <% end %>
+          </h4>
+        </div>
       </div>
       <% owner = User.find(@recipe.user_id) %>
       <%= link_to user_path(owner) do %>
@@ -87,7 +89,7 @@
               <i class="fa fa-star" aria-hidden="true"></i>
             <% end %>
             <p>"<%= transaction.comment %>"</p>
-            <h3><%= transaction.user.first_name %></h3>
+            <h3><%= transaction.user.first_name.capitalize %></h3>
           <% end %>
         </div>
       <% end %>
