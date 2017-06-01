@@ -1,15 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,3)), url('<%= cl_image_path @recipe.photo, height: 300, width: 400, crop: :fill %>'); background-size: cover">
   <div class="banner-content">
+
     <h1><%= @recipe.title %> <br> Bought by <%= @recipe.transactions.count %> people</h1>
     <i class="fa fa-heart-o" aria-hidden="true"></i>
     <i class="fa fa-chevron-left" aria-hidden="true"></i>
     <i class="fa fa-chevron-right" aria-hidden="true"></i>
     <div class="star-rating">
+    <% @average_rating.times do %>
       <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star" aria-hidden="true"></i>
+    <% end %>
     </div>
   </div>
 </div>
@@ -34,9 +33,6 @@
         </div>
       <% end %>
     </div>
-
-
-
   </div>
 
   <% if user_signed_in? %>
