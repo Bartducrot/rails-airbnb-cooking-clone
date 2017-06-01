@@ -67,13 +67,39 @@
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  font-size: 16px;
-  color: $darker-grey;
-    &:hover {
+  font-family: Raleway,Roboto,Helvetica Neue,Segoe UI,sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 3px;
   color: black;
-  text-decoration: none
+  margin-left: 10px;
+    &:hover {
+    text-decoration: none;
+    color: black;
+    padding: 3px;
+    margin-left: 10px;
+    border-bottom: 2px solid $blue;
   }
 }
+
+// .navbar-wagon-link {
+//   font-family: Raleway,Roboto,Helvetica Neue,Segoe UI,sans-serif;
+//   background-color: $btn-green;
+//   font-weight: 700;
+//   font-size: 13px;
+//   padding-top: 10px;
+//   padding-bottom: 10px;
+//   margin-left: 10px;
+//   border-radius: 3px;
+//   color: white;
+//     &:hover {
+//     text-decoration: none;
+//     color: white;
+//     opacity: 0.75;
+//   }
+// }
+
+
 /* Navbar search form */
 .navbar-wagon-search {
   display: flex;
