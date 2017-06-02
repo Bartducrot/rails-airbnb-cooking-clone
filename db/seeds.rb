@@ -22,11 +22,7 @@ admin.save
 
 
 1.times do |i|
-<<<<<<< HEAD
     ingredients = ["thai", "pasta", "french", "sushi", "italian", "dinner"]
-=======
-    ingredients = ["thai", "pasta", "french", "italian", "sushi", "ice+cream"]
->>>>>>> master
     base_url = "https://www.bbcgoodfood.com"
     ingredients.each do |ingredient|
       url = "https://www.bbcgoodfood.com/search/recipes?query=#{ingredient}#query=#{ingredient}&page=#{i}"
