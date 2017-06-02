@@ -49,8 +49,10 @@
         <h2>Method</h2>
         <p><%= @recipe.instructions %></p>
       </div>
-      <%= link_to "Delete this recipe", recipe_path(@recipe), method: :delete %>
-      <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %>
+      <div class="text-center padded">
+        <%= link_to "Delete this recipe", recipe_path(@recipe), method: :delete , class: "btn btn-danger btn-lg text-center"%>
+        <%= link_to "Edit this recipe", edit_recipe_path(@recipe) , class: "btn btn-success btn-lg text-center"%>
+      </div>
     <% elsif @status_current_user%>
       <div class="recipe-instructions">
         <h2>Method</h2>
