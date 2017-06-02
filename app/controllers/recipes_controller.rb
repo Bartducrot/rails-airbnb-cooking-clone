@@ -5,6 +5,12 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
     if params[:search]
       @recipes = Recipe.search(params[:search]).order("created_at DESC")
+    elsif params[:rating]
+      @recipes = Recipe.all.sort_by { |recipe| recipe.avg_rating }.reverse
+    elsif params[:time]
+      @recipes = Recipe.all.sort_by { |recipe| recipe.cooking_time}
+    elsif params[:price]
+      @recipes = Recipe.all.sort_by { |recipe| recipe.price.to_i}
     else
       @recipes = Recipe.all.order("created_at DESC")
     end
