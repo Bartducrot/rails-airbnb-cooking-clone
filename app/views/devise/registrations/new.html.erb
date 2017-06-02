@@ -20,7 +20,7 @@
         <%= f.input :last_name, required: true, placeholder: "Ramsay" %>
         <%= f.input :photo, label: false %>
         <%= f.input :photo_cache, as: :hidden %>
-        <%= f.input :email, required: true, autofocus: true, placeholder: "gordon.ramsay@arsehole.com" %>
+        <%= f.input :email, required: true, placeholder: "gordon.ramsay@arsehole.com" %>
         <%= f.input :password, placeholder: "Password", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true, placeholder: "Password" %>
         </div>
