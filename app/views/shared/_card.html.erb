@@ -11,7 +11,7 @@
     <% end %>
   </div>
   <% owner = User.find(recipe.user_id) %>
-  <% avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "lmaagvitvvpz5unlrjfm" %>
+  <% avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "http://placehold.it/30x30" %>
 
     <%= cl_image_tag avatar_url, class: "card-user avatar-bordered" %>
 

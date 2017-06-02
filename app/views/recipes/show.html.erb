@@ -28,7 +28,7 @@
       <% owner = User.find(@recipe.user_id) %>
       <%= link_to user_path(owner) do %>
         <div class="recipe-avatar">
-        <% owner_avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "lmaagvitvvpz5unlrjfm" %>
+        <% owner_avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "http://placehold.it/30x30" %>
 
           <%= image_tag owner_avatar_url, class: "avatar" %>
 
