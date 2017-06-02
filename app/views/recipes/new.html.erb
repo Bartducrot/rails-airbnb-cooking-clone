@@ -1,15 +1,15 @@
 <h1>Create a new recipe</h1>
 <%= simple_form_for @recipe do |f| %>
   <%= f.error_notification %>
-  <%= f.input :title, :hint => "Define the title" , required: true%>
+  <%= f.input :title, hint: "Define the title" , required: true%>
   <%= f.input :photo , required: true%>
   <%= f.input :photo_cache, as: :hidden , required: true%>
-  <%= f.input :price, :hint => "give us a price (GBP)" , required: true%>
-  <%= f.input :cooking_time, :hint => "cooking time (minutes)" , required: true%>
-  <%= f.input :description, :hint => "tell us where its from, the story behind" , required: true%>
-  <%= f.input :instructions, :hint => "tell us how to do it step by step" , required: true%>
-  <%= f.input :difficulty, :hint => "tell us how difficlt it is"  , required: true%>
-  <%= f.input :cuisine_type, :hint => "french, italian, else", required: true%>
+  <%= f.input :price, hint: "give us a price (GBP)" , required: true%>
+  <%= f.input :cooking_time, hint: "cooking time (minutes)" , required: true%>
+  <%= f.input :description, hint: "tell us where its from, the story behind" , required: true%>
+  <%= f.input :instructions, hint: "tell us how to do it step by step" , required: true%>
+  <%= f.input :difficulty, hint: "tell us how difficlt it is", required: true, collection: ["Very Easy", "Easy", "Medium", "Hard", "Very Hard"], as: :radio_buttons %>
+  <%= f.input :cuisine_type, hint: "french, italian, else", required: true, collection: ["American", "British", "Caribbean", "Chinese", "French", "Greek", "Indian", "Italian", "Japanese", "Mediterranean", "Mexican", "Moroccan", "Spanish", "Thai", "Turkish", "Vietnamese"]%>
   <%= f.button :submit %>
 <% end %>
 
