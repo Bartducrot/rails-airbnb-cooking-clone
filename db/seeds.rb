@@ -45,7 +45,7 @@ admin.save
         recipe.title = title
         recipe.cooking_time = cooking_time
         recipe.difficulty = difficulty
-        recipe.price = rand(1..2)
+        recipe.price = rand(1..5)
         recipe.description = description
         recipe.instructions = instructions
         recipe.remote_photo_url = "https:" + photo_max if photo_max
