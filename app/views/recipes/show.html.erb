@@ -28,12 +28,10 @@
       <% owner = User.find(@recipe.user_id) %>
       <%= link_to user_path(owner) do %>
         <div class="recipe-avatar">
-        <% owner_avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "lmaagvitvvpz5unlrjfm" %>
-        <% if owner.last_name == "OSS 117"%>
-          <%= cl_image_tag "lmaagvitvvpz5unlrjfm", class: "avatar" %>
-        <% else %>
+        <% owner_avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "http://placehold.it/30x30" %>
+
           <%= image_tag owner_avatar_url, class: "avatar" %>
-        <% end %>
+
         <p class="text-center"><%= owner.first_name %> <br> <%= owner.last_name %></p>
         </div>
       <% end %>
@@ -47,7 +45,8 @@
         <h2>Method</h2>
         <p><%= @recipe.instructions %></p>
       </div>
-      <%= link_to "delete this recipe", recipe_path(@recipe), method: :delete %>
+      <%= link_to "Delete this recipe", recipe_path(@recipe), method: :delete %>
+      <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %>
     <% elsif @status_current_user%>
       <div class="recipe-instructions">
         <h2>Method</h2>

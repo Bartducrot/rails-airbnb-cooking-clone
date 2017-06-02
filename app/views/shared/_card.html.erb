@@ -6,17 +6,15 @@
     <h4>£ <%= recipe.price %></h4>
   </div>
   <div class="card-rating">
-    <% 5.times do %>
+    <% recipe.avg_rating.times do %>
       <i class="fa fa-star" aria-hidden="true"></i>
     <% end %>
   </div>
   <% owner = User.find(recipe.user_id) %>
-  <% avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "lmaagvitvvpz5unlrjfm" %>
-  <% if owner.last_name == "OSS 117" %>
-    <%= cl_image_tag "lmaagvitvvpz5unlrjfm", class: "card-user avatar-bordered" %>
-  <% else %>
+  <% avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "http://placehold.it/30x30" %>
+
     <%= cl_image_tag avatar_url, class: "card-user avatar-bordered" %>
-  <% end %>
+
   <%= link_to "", recipe_path(recipe), class: "card-link"  %>
 </div>
 
