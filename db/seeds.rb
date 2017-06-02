@@ -16,7 +16,10 @@ Transaction.destroy_all
 User.destroy_all
 Recipe.destroy_all
 
-admin = User.create(first_name: "administration", email: "hubert@gmail.com", password: "123456")
+admin = User.new(first_name: "Hubert", last_name: "OSS 117", email: "hubert@gmail.com", password: "123456")
+admin.remote_photo_url = "http://res.cloudinary.com/dzkce2bbo/image/upload/v1496397746/oss-117_k49rdx.jpg"
+admin.save
+
 1.times do |i|
     ingredients = ["french", "italian", "sushi"]
     base_url = "https://www.bbcgoodfood.com"
