@@ -1,0 +1,16 @@
+<div class="filter">
+<div class="tabs text-center">
+  <h4><%= link_to recipes_path(rating: true), class: "tab filter-link" do %>
+  RATING <i class="fa fa-caret-down" aria-hidden="true"></i>
+  <% end %>
+  </h4>
+   <h4><%= link_to recipes_path(time: true), class: "tab filter-link" do %>
+  TIME <i class="fa fa-caret-down" aria-hidden="true"></i>
+  <% end %>
+  </h4>
+   <h4><%= link_to recipes_path(price: true), class: "tab filter-link" do %>
+  PRICE <i class="fa fa-caret-down" aria-hidden="true"></i>
+  <% end %>
+  </h4>
+</div>
+</div>
