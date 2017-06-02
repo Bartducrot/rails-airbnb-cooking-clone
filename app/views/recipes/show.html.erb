@@ -1,20 +1,11 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,3)), url('<%= cl_image_path @recipe.photo, height: 300, width: 400, crop: :fill %>'); background-size: cover">
   <div class="banner-content">
-
-    <h1><%= @recipe.title %> <br> Bought by <%= @recipe.transactions.count %> people</h1>
-    <i class="fa fa-heart-o" aria-hidden="true"></i>
-    <i class="fa fa-chevron-left" aria-hidden="true"></i>
-    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    <h1><%= @recipe.title %> </h1>
   </div>
 </div>
 <div class="container padded-bottom">
   <div class="container-recipe-page">
-
     <div class="flex-recipe-details">
-      <div class="recipe-description">
-        <p>"<%= @recipe.description %>"</p>
-      </div>
-      <div class="cooking-details">
         <h3><i class="fa fa-cutlery" aria-hidden="true"></i> <%= @recipe.difficulty.upcase%></h3>
         <h3><i class="fa fa-clock-o" aria-hidden="true"></i> <%= @recipe.cooking_time %> MINS</h3>
         <div class="star-rating">
@@ -24,19 +15,32 @@
             <% end %>
           </h4>
         </div>
-      </div>
-      <% owner = User.find(@recipe.user_id) %>
+         <% owner = User.find(@recipe.user_id) %>
       <%= link_to user_path(owner) do %>
         <div class="recipe-avatar">
         <% owner_avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "http://placehold.it/30x30" %>
 
           <%= image_tag owner_avatar_url, class: "avatar" %>
 
-        <p class="text-center"><%= owner.first_name %> <br> <%= owner.last_name %></p>
+        <p class="user-name text-center"><%= owner.first_name.upcase %> <br> <%= owner.last_name.upcase %></p>
         </div>
+      </div>
+
       <% end %>
+
+
+    <div class="description-box">
+      <div class="recipe-description">
+        <p><em>"<%= @recipe.description %>"</em></p>
+      </div>
+
+      <div class="number-bought">
+        <div><h3>BOUGHT BY</h3></div>
+        <div><h2 class="bought-by"><%= @recipe.transactions.count %></h2></div>
+        <div><h3><%= @recipe.transactions.count > 1 ? "PEOPLE" : "PERSON" %></h3></div>
+      </div>
+
     </div>
-  </div>
 
   <% if user_signed_in? %>
 
@@ -92,8 +96,9 @@
           <% end %>
         </div>
       <% end %>
-
   </div>
+  </div>
+ </div>
 
 </div>
 
