@@ -20,8 +20,9 @@ admin = User.new(first_name: "Hubert", last_name: "OSS 117", email: "hubert@gmai
 admin.remote_photo_url = "http://res.cloudinary.com/dzkce2bbo/image/upload/v1496397746/oss-117_k49rdx.jpg"
 admin.save
 
+
 1.times do |i|
-    ingredients = ["french", "italian", "sushi"]
+    ingredients = ["thai", "ice cream" "french", "italian", "sushi"]
     base_url = "https://www.bbcgoodfood.com"
     ingredients.each do |ingredient|
       url = "https://www.bbcgoodfood.com/search/recipes?query=#{ingredient}#query=#{ingredient}&page=#{i}"
@@ -32,7 +33,6 @@ admin.save
         title = node.search('h3 a').text.strip
         cooking_time = node.search('.teaser-item__info-item--total-time').text.strip
         cooking_time = transform_time(cooking_time)
-
         difficulty = node.search('.teaser-item__info-item--skill-level').text.strip
         description = node.search('.field-items > .field-item').text.strip
 
@@ -45,6 +45,7 @@ admin.save
         recipe.title = title
         recipe.cooking_time = cooking_time
         recipe.difficulty = difficulty
+        recipe.price = rand(1..5)
         recipe.description = description
         recipe.instructions = instructions
         recipe.remote_photo_url = "https:" + photo_max if photo_max
