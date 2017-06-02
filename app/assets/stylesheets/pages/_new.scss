@@ -16,6 +16,18 @@
   }
 }
 
+.form-container.create-recipe-form {
+  width: 700px;
+  @media(max-width: 700px) {
+    width: 100%;
+    }
+}
+
+.create-recipe {
+  padding: 20px;
+  background-color: rgba(255,255,255,0.8);
+}
+
 .form-wrapper h2 {
   margin: 0px;
   text-align: center;
