@@ -29,11 +29,9 @@
       <%= link_to user_path(owner) do %>
         <div class="recipe-avatar">
         <% owner_avatar_url = owner.facebook_picture_url || owner.photo.url(:square) || "lmaagvitvvpz5unlrjfm" %>
-        <% if owner.last_name == "OSS 117"%>
-          <%= cl_image_tag "lmaagvitvvpz5unlrjfm", class: "avatar" %>
-        <% else %>
+
           <%= image_tag owner_avatar_url, class: "avatar" %>
-        <% end %>
+
         <p class="text-center"><%= owner.first_name %> <br> <%= owner.last_name %></p>
         </div>
       <% end %>
