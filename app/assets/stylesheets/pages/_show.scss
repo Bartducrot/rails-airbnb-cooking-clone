@@ -51,6 +51,7 @@
   background-color: $off-white;
   text-align: center;
   align-items: center;
+  padding-bottom: 20px;
 }
 
 .flex-recipe-details h3 {
@@ -62,7 +63,7 @@
 }
 
 .container-recipe-page {
-  width: 70%;
+  width: 90%;
   margin: auto;
 }
 
@@ -70,6 +71,7 @@
   padding: 30px;
   font-size: 25px;
   color: black;
+  text-align: center;
 }
 
 .recipe-instructions {
