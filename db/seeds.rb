@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -48,7 +48,6 @@ admin = User.create(first_name: "Hubert", last_name: "OSS 117", email: "hubert@g
         cooking_time = transform_time(cooking_time)
 
 
-        difficulty = node.search('.teaser-item__info-item--skill-level').text.strip
         description = node.search('.field-items > .field-item').text.strip
 
         show = base_url + node.search('a').attr('href').text.strip
