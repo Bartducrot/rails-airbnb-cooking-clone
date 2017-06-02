@@ -2,7 +2,7 @@ Transaction.destroy_all
 Recipe.destroy_all
 User.destroy_all
 
-admin = User.create(first_name: "administration", last_name: "OSS 117", email: "hubert@gmail.com", password: "123456")
+admin = User.create(first_name: "Hubert", last_name: "OSS 117", email: "hubert@gmail.com", password: "123456")
 
 1.times do |i|
     url = "https://www.bbcgoodfood.com/search/recipes?query=&op=Search#page=#{i}"
