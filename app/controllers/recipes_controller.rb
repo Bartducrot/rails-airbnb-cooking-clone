@@ -37,7 +37,7 @@ class RecipesController < ApplicationController
 
     sum = 0
     nb = 0
-    @average_rating = average_rating(@recipe)
+    @average_rating = @recipe.avg_rating
 
     @transaction = Transaction.find_by(user: current_user, recipe: @recipe)
     unless @transaction
@@ -52,27 +52,7 @@ class RecipesController < ApplicationController
     redirect_to recipes_path
   end
 
-
-
-
   private
-
-  def average_rating(recipe)
-    sum = 0
-    nb = 0
-    recipe.transactions.each do |transaction|
-      if transaction.rating
-        sum += transaction.rating
-        nb += 1
-      end
-    end
-
-    if nb != 0
-      return (sum / nb).to_i
-    else
-      return 0
-    end
-  end
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
