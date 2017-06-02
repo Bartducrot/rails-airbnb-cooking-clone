@@ -31,11 +31,16 @@
           <%= render "shared/card", recipe: recipe %>
         </div>
       <% end  %>
-      <div class="col-xs-12 col-sm-6">
-        <%= link_to new_recipe_path, class: "card add-card btn" do%>
-          <h3>Add a new recipe</h3>
+      <% if current_user %>
+        <% if current_user.id == @user.id%>
+          <div class="col-xs-12 col-sm-6">
+            <%= link_to new_recipe_path, class: "card add-card btn" do%>
+              <h3>Add a new recipe</h3>
+            <% end %>
+          </div>
         <% end %>
-      </div>
+      <% end %>
+
     </div>
   </div>
 </div>
