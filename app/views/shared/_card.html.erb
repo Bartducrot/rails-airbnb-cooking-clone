@@ -6,7 +6,7 @@
     <h4>£ <%= recipe.price %></h4>
   </div>
   <div class="card-rating">
-    <% 5.times do %>
+    <% recipe.avg_rating.times do %>
       <i class="fa fa-star" aria-hidden="true"></i>
     <% end %>
   </div>
